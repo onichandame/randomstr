@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="randomstr", # Replace with your own username
-    version="0.0.2",
+    version="0.0.3",
     author="onichandame",
     author_email="zxinmyth@gmail.com",
     description="a random string generator",
