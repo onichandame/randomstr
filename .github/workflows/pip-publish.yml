@@ -1,0 +1,26 @@
+name: Publish to Pip
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare repo
+        uses: actions/checkout@master
+      - name: Prepare Python
+        uses: actions/setup-python@master
+        with:
+          python-version: '3.6'
+      - name: Install Dependencies
+        run: python3 -m pip install -r requirements.txt
+      - name: Test
+        run: python3 -m unittest
+      - name: Build
+        run: python3 setup.py sdist bdist_wheel
+      - name: Publish
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.PIP_PASSWORD }}
