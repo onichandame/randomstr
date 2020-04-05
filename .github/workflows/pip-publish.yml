@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: '3.6'
       - name: Install Dependencies
-        run: python3 -m pip install -r requirements.txt
+        run: python3 -m pip install -r requirements.txt && python3 -m pip install wheel
       - name: Test
         run: python3 -m unittest
       - name: Build
