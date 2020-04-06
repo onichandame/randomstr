@@ -9,18 +9,23 @@ jobs:
     steps:
       - name: Prepare repo
         uses: actions/checkout@master
-      - name: Prepare Python
-        uses: actions/setup-python@master
+      - name: upload
+        uses: onichandame/pip-upload@master
         with:
-          python-version: '3.6'
-      - name: Install Dependencies
-        run: python3 -m pip install -r requirements.txt && python3 -m pip install wheel twine
-      - name: Test
-        run: python3 -m unittest
-      - name: Build
-        run: python3 setup.py sdist bdist_wheel
-      - name: Publish
-        env:
-          PIP_USER: __token__
-          PIP_PASSWORD: ${{ secrets.PIP_PASSWORD }}
-        run: twine upload dist/* -u $PIP_USER -p $PIP_PASSWORD
+          username: '__token__'
+          password: ${{ secrets.PIP_PASSWORD }}
+        # - name: Prepare Python
+        # - uses: actions/setup-python@master
+        # - with:
+        # -   python-version: '3.6'
+      - # - name: Install Dependencies
+        # - run: python3 -m pip install -r requirements.txt && python3 -m pip install wheel twine
+      - # - name: Test
+        # - run: python3 -m unittest
+      - # - name: Build
+        # - run: python3 setup.py sdist bdist_wheel
+      - # - name: Publish
+        # - env:
+        # -   PIP_USER: __token__
+        # -   PIP_PASSWORD: ${{ secrets.PIP_PASSWORD }}
+        # - run: twine upload dist/* -u $PIP_USER -p $PIP_PASSWORD
