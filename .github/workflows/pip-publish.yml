@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Prepare repo
         uses: actions/checkout@master
-      - name: upload
+      - name: Upload
         uses: onichandame/pip-upload@master
         with:
           username: '__token__'
