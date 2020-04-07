@@ -10,9 +10,9 @@ jobs:
       - name: Prepare repo
         uses: actions/checkout@master
       - name: Test
-        uses: onichandame/python-test-action@0.0.1
+        uses: onichandame/python-test-action@master
       - name: Upload
-        uses: onichandame/pip-upload@master
+        uses: onichandame/pip-upload-action@0.0.1
         with:
           username: '__token__'
           password: ${{ secrets.PIP_PASSWORD }}
