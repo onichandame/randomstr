@@ -11,5 +11,5 @@ python random string generator. inspired by [randomstring](https://www.npmjs.com
 ```python
 from randomstr import randomstr
 
-print(randomstr(length=10))
+print(randomstr(length=10, charset='alphanumeric', readable=False, capitalization=False))
 ```
