@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Prepare repo
         uses: actions/checkout@master
+      - name: Test
+        uses: onichandame/python-test-action@0.0.1
       - name: Upload
         uses: onichandame/pip-upload@master
         with:
